@@ -46,9 +46,12 @@ describe("Test diary endpoint at '/v1/entries' to create a new entry with POST",
       .then((res) => {
         expect(res).to.have.status(400);
         expect(res.body).to.have.property('message').equal('Description is required');
+        done();
+      });
+  });
 });
 
-    describe("Test diary endpoint at '/v1/entries' to get all entries with GET", () => {
+describe("Test diary endpoint at '/v1/entries' to get all entries with GET", () => {
   it("should get all diary entries at '/v1/entries' with GET", (done) => {
     chai.request(app)
       .get('/v1/entries')
@@ -58,3 +61,4 @@ describe("Test diary endpoint at '/v1/entries' to create a new entry with POST",
         done();
       });
   });
+});
