@@ -4,5 +4,6 @@ export default (router) => {
   router.route('/v1/status')
     .get(diaryController.status);
   router.route('/v1/entries')
-    .get(diaryController.getAll);
+    .post(diaryController.createOne)
+     .get(diaryController.getAll);
 };
